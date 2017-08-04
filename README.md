@@ -1,1 +1,1 @@
-# NetNeutralityBot-Reddit
+# NetNeutralityBot

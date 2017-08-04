@@ -1,3 +1,9 @@
+.idea
+src/database
+src/modules/account.py
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
