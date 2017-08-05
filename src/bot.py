@@ -18,9 +18,11 @@ from src.modules.account import credentials
 from src.modules.database_handler import DatabaseHandler
 from src.modules.post_handler import PostHandler
 from src.modules.reddit_handler import RedditHandler
+from src.modules.crash_handler import handle_crash
 
-GITHUB_HOME = ''
-GITHUB_README = ''
+
+GITHUB_HOME = 'https://github.com/tylerbrockett/NetNeutralityBot-Reddit'
+GITHUB_README = 'https://github.com/tylerbrockett/NetNeutralityBot-Reddit/blob/master/README.md'
 
 
 class NetNeutralityBot:
@@ -38,23 +40,20 @@ class NetNeutralityBot:
                 print(str(len(posts)) + ' matches found')
                 PostHandler.handle_matches(self.reddit, self.database, posts, self.message)
             except:
-                print(traceback.format_exc())
-                self.database.reset()
-                self.reddit.reset()
-                self.reddit.send_message(credentials['developer', 'NetNeutralityBot crashed'], traceback.format_exc())
+                handle_crash(traceback.format_exc(), self.reddit, self.database)
             time.sleep(20)
 
     def read_file(self):
         with open(os.path.join(ROOT_DIR, 'resources/message.txt'), 'r') as messageFile:
-            self.message = messageFile.read().replace('\n', '') + self.signature()
+            self.message = messageFile.read() + self.signature()
             print('MESSAGE:\n' + self.message)
             time.sleep(5)
 
     def signature(self):
         signature = \
             '\n\t \n\t \n-/u/' + credentials['username'] + '\n\t \n\t \n' + \
-            '/u/' + credentials['developer'] + ' | ' + \
-            '[Bot Code](' + GITHUB_HOME + ')\n' + \
+            '[Contact Developer](/u/' + credentials['developer'] + ') | ' + \
+            '[Bot Code](' + GITHUB_HOME + ') | ' + \
             '[Readme](' + GITHUB_README + ')\n'
         return signature
 

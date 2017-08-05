@@ -27,7 +27,7 @@ class PostHandler:
             posts = reddit.get_submissions(subreddit)
             for post in posts:
                 for term in PostHandler.search_terms:
-                    if term in post.title.lower():
+                    if term in post.title.lower() or (post.link_flair_text and term in post.link_flair_text.lower()):
                         if not database.match_exists(post.permalink):
                             matches.append((term, post))
         return matches
@@ -35,12 +35,12 @@ class PostHandler:
     @staticmethod
     def handle_matches(reddit, database, matches, message):
         for term, post in matches:
-            print('Inserting record ' + post.permalink)
             database.insert_comment(post.permalink)
-            comment = post.add_comment(message)
+            comment = post.reply(message)
             database.commit()
             reddit.send_message(
                 credentials['developer'],
-                'Bot commented on post',
-                '[Comment found here](' + comment.permalink + ')'
+                'NetNeutralityBot commented on post',
+                '[' + str(post.title) + '](' + str(comment.permalink) + ')\t \n\t \n' +
+                message
             )

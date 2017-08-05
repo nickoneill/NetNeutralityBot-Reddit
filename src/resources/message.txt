@@ -1,1 +1,25 @@
-Net Neutrality comment text here!
+If you want to help protect Net Neutrality, you can support groups like the Electronic Frontier Foundation and the ACLU and Free Press who are fighting to keep Net Neutrality:
+
+* https://www.eff.org/
+* https://www.aclu.org/
+* https://www.freepress.net/
+* https://www.fightforthefuture.org/
+* https://www.publicknowledge.org/
+* https://demandprogress.org/
+
+[Set them as your charity on Amazon Smile here](https://smile.amazon.com/)
+
+Write to your [House Representative here](http://www.house.gov/representatives/find/) and [Senators here](https://www.senate.gov/general/contact_information/senators_cfm.cfm?OrderBy=state)
+
+[Write to the FCC here](https://www.fcc.gov/about/contact)
+
+[Add a comment to the repeal here](https://www.fcc.gov/ecfs/search/filings?proceedings_name=17-108&amp;sort=date_disseminated,DESC)
+
+[Here's an easier URL you can use thanks to John Oliver](http://www.gofccyourself.com)
+
+[You can also use this to help you contact your house and congressional reps. It's easy to use and cuts down on the transaction costs with writing a letter to your reps](https://resistbot.io/)
+
+[Also check this out](https://democracy.io/#!/), which was made by the EFF and is a low transaction cost tool for writing all your reps in one fell swoop. And just a reminder that the FCC's vote on 18th is to begin the process of rolling back Net Neutrality so there will be a 3 month comment period and the final vote will likely be around the 18th of August.
+
+
+If you would like to contribute to the text in this bot's posts, [please edit this file](https://github.com/tylerbrockett/NetNeutralityBot-Reddit/blob/master/src/resources/message.txt) on github.
