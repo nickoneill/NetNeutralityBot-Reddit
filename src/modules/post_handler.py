@@ -9,7 +9,7 @@ Version:            v1.0
 ==========================================
 """
 
-from src.modules.account import credentials
+from modules.account import credentials
 
 
 class PostHandler:

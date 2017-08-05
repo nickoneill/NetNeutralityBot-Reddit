@@ -13,12 +13,12 @@ import os
 import time
 import traceback
 
-from src.definitions import ROOT_DIR
-from src.modules.account import credentials
-from src.modules.database_handler import DatabaseHandler
-from src.modules.post_handler import PostHandler
-from src.modules.reddit_handler import RedditHandler
-from src.modules.crash_handler import handle_crash
+from definitions import ROOT_DIR
+from modules.account import credentials
+from modules.database_handler import DatabaseHandler
+from modules.post_handler import PostHandler
+from modules.reddit_handler import RedditHandler
+from modules.crash_handler import handle_crash
 
 
 GITHUB_HOME = 'https://github.com/tylerbrockett/NetNeutralityBot-Reddit'

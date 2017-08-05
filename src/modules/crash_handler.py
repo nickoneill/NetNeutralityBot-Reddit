@@ -10,7 +10,7 @@ Version:            v1.0
 """
 
 import time
-from src.modules.account import credentials
+from modules.account import credentials
 
 
 def handle_crash(stacktrace, reddit=None, database=None):
