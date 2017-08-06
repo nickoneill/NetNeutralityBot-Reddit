@@ -19,6 +19,7 @@ from modules.database_handler import DatabaseHandler
 from modules.post_handler import PostHandler
 from modules.reddit_handler import RedditHandler
 from modules.crash_handler import handle_crash
+from modules.inbox_handler import InboxHandler
 
 
 GITHUB_HOME = 'https://github.com/tylerbrockett/NetNeutralityBot-Reddit'
@@ -36,6 +37,7 @@ class NetNeutralityBot:
     def start(self):
         while True:
             try:
+                InboxHandler.read_inbox(self.database, self.reddit)
                 posts = PostHandler.find_matches(self.reddit, self.database)
                 print(str(len(posts)) + ' matches found')
                 PostHandler.handle_matches(self.reddit, self.database, posts, self.message)

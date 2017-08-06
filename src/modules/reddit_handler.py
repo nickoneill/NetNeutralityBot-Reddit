@@ -49,6 +49,17 @@ class RedditHandler:
             print(traceback.format_exc())
             raise RedditHelperException(RedditHelperException.SEND_MESSAGE_EXCEPTION)
 
+    def get_unread(self):
+        try:
+            ret = []
+            unread = self.reddit.inbox.unread(limit=None)
+            for message in unread:
+                ret.append(message)
+            ret.reverse()
+            return ret
+        except:
+            return []
+
     def get_submissions(self, subreddit):
         submissions = []
         posts = 200 if (subreddit == 'all') else self.NUM_POSTS
