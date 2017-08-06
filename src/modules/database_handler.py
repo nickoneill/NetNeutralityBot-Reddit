@@ -84,7 +84,7 @@ class DatabaseHandler:
 
     def count_posts(self):
         try:
-            return len(self.connection.cursor().execute(COUNT).fetchall())
+            return self.connection.cursor().execute(COUNT).fetchone()[0]
         except:
             print('ERROR - Counting posts')
             return -1

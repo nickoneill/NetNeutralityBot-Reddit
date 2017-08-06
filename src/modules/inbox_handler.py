@@ -26,7 +26,8 @@ class InboxHandler:
             'NetNeutralityBot received a message',
             'Username: ' + str(message.author) + '\t\n \t\n' +
             'Subject:  ' + str(message.subject) + '\t\n \t\n' +
-            'Body:     ' + str(message.body))
+            'Body:     ' + str(message.body)
+        )
         message.mark_read()
 
     @staticmethod
