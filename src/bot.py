@@ -43,7 +43,7 @@ class NetNeutralityBot:
                 PostHandler.handle_matches(self.reddit, self.database, posts, self.message)
             except:
                 handle_crash(traceback.format_exc(), self.reddit, self.database)
-            time.sleep(20)
+            time.sleep(150)
 
     def read_file(self):
         with open(os.path.join(ROOT_DIR, 'resources/message.txt'), 'r') as messageFile:
