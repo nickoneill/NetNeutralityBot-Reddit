@@ -24,9 +24,8 @@ class InboxHandler:
         reddit.send_message(
             credentials['developer'],
             'NetNeutralityBot - Comment Reply',
-            '[PERMALINK](' + message.permalink + ')\t\n \t\n' +
+            '[Comment Reply](' + message.permalink + ')\t\n \t\n' +
             'Username: /u/' + str(message.author) + '\t\n \t\n' +
-            'Subject:     ' + str(message.subject) + '\t\n \t\n' +
             'Body:        ' + str(message.body)
         )
 
