@@ -40,7 +40,7 @@ class PostHandler:
             database.commit()
             reddit.send_message(
                 credentials['developer'],
-                'NetNeutralityBot commented on post',
-                '[' + str(post.title) + '](' + str(comment.permalink) + ')\t \n\t \n' +
+                'NetNeutralityBot - Posted',
+                '[' + str(post.title) + '](' + comment.permalink + ')\t \n\t \n' +
                 message
             )
