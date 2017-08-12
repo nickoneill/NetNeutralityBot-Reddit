@@ -20,23 +20,24 @@ class InboxHandler:
         message.mark_read()
 
     @staticmethod
-    def handle_comment_reply(message, reddit):
+    def handle_comment_reply(comment, reddit):
         reddit.send_message(
             credentials['developer'],
             'NetNeutralityBot - Comment Reply',
-            '[Comment Reply](' + message.permalink + ')\t\n \t\n' +
-            'Username: /u/' + str(message.author) + '\t\n \t\n' +
-            'Body:        ' + str(message.body)
+            '[Comment Reply](' + comment.context + ')\t \n' +
+            '**Username:** /u/' + str(comment.author) + '\t \n' +
+            '**Body:**\t \n' + comment.body
         )
+        comment.mark_read()
 
     @staticmethod
-    def handle_default_message(reddit, message):
+    def handle_default_message(message, reddit):
         reddit.send_message(
             credentials['developer'],
             'NetNeutralityBot - Message',
-            'Username: /u/' + str(message.author) + '\t\n \t\n' +
-            'Subject:     ' + str(message.subject) + '\t\n \t\n' +
-            'Body:        ' + str(message.body)
+            'Username: /u/' + str(message.author) + '\t \n' +
+            'Subject:     ' + message.subject + '\t \n' +
+            'Body:        ' + message.body
         )
         message.mark_read()
 
@@ -49,7 +50,7 @@ class InboxHandler:
             if subject in ['stats', 'statistics']:
                 count = database.count_posts()
                 InboxHandler.handle_stats_message(message, count)
-            elif subject in ['comment reply']:
+            elif message.was_comment:
                 InboxHandler.handle_comment_reply(message, reddit)
             else:
-                InboxHandler.handle_default_message(reddit, message)
+                InboxHandler.handle_default_message(message, reddit)
