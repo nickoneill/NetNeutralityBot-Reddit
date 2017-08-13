@@ -21,6 +21,8 @@ class InboxHandler:
 
     @staticmethod
     def handle_comment_reply(comment, reddit):
+        if 'good bot' in comment.body.lower():
+            comment.reply('Good human.')
         reddit.send_message(
             credentials['developer'],
             'NetNeutralityBot - Comment Reply',
