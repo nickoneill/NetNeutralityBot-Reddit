@@ -21,6 +21,7 @@ class InboxHandler:
 
     @staticmethod
     def handle_comment_reply(comment, reddit):
+        comment.mark_read()
         if 'good bot' in comment.body.lower():
             comment.reply('Good human.')
         reddit.send_message(
@@ -30,7 +31,6 @@ class InboxHandler:
             '**Username:** /u/' + str(comment.author) + '\t \n' +
             '**Body:**\t \n' + comment.body
         )
-        comment.mark_read()
 
     @staticmethod
     def handle_default_message(message, reddit):
