@@ -28,7 +28,7 @@ class InboxHandler:
             credentials['developer'],
             'NetNeutralityBot - Comment Reply',
             '[Comment Reply](' + comment.context + ')\t \n' +
-            '**Username:** /u/' + str(comment.author) + '\t \n' +
+            '**Username:** /u/' + comment.author.name + '\t \n' +
             '**Body:**\t \n' + comment.body
         )
 
@@ -37,7 +37,7 @@ class InboxHandler:
         reddit.send_message(
             credentials['developer'],
             'NetNeutralityBot - Message',
-            'Username: /u/' + str(message.author) + '\t \n' +
+            'Username: /u/' + message.author.name + '\t \n' +
             'Subject:     ' + message.subject + '\t \n' +
             'Body:        ' + message.body
         )
