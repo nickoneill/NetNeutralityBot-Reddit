@@ -17,9 +17,9 @@ Write to your [House Representative here](http://www.house.gov/representatives/f
 
 [Here's an easier URL you can use thanks to John Oliver](http://www.gofccyourself.com)
 
-[You can also use this to help you contact your house and congressional reps. It's easy to use and cuts down on the transaction costs with writing a letter to your reps](https://resistbot.io/)
+[You can also use this to help you contact your house and congressional reps.](https://resistbot.io/) It's easy to use and cuts down on the transaction costs with writing a letter to your reps
 
-[Also check this out](https://democracy.io/#!/), which was made by the EFF and is a low transaction cost tool for writing all your reps in one fell swoop. And just a reminder that the FCC's vote on 18th is to begin the process of rolling back Net Neutrality so there will be a 3 month comment period and the final vote will likely be around the 18th of August.
+[Also check this out](https://democracy.io/#!/), which was made by the EFF and is a low transaction cost tool for writing all your reps in one fell swoop.
 
 
 If you would like to contribute to the text in this bot's posts, [please edit this file](https://github.com/tylerbrockett/NetNeutralityBot-Reddit/blob/master/src/resources/message.txt) on github.
