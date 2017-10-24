@@ -1,5 +1,6 @@
 If you want to help protect Net Neutrality, you can support groups like the Electronic Frontier Foundation and the ACLU and Free Press who are fighting to keep Net Neutrality:
 
+* https://www.battleforthenet.com/
 * https://www.eff.org/
 * https://www.aclu.org/
 * https://www.freepress.net/
