@@ -41,6 +41,6 @@ class PostHandler:
             reddit.send_message(
                 credentials['developer'],
                 'NetNeutralityBot - Posted',
-                '[' + str(post.title) + '](' + comment.permalink + ')\t \n\t \n' +
-                message
+                'NetNeutralityBot - Posted\n\t \n' +
+                '[' + str(post.title) + '](' + comment.permalink + ')'
             )
