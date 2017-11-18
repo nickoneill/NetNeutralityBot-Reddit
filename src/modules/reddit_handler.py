@@ -64,7 +64,10 @@ class RedditHandler:
         submissions = []
         posts = 200 if (subreddit == 'all') else self.NUM_POSTS
         try:
-            submissions = self.reddit.subreddit(subreddit).new(limit=posts)
+            if subreddit == 'all':
+                submissions = self.reddit.subreddit(subreddit).hot(limit=posts)
+            else:
+                submissions = self.reddit.subreddit(subreddit).new(limit=posts)
         except:
             print(traceback.format_exc())
             raise RedditHelperException(RedditHelperException.GET_SUBMISSIONS_EXCEPTION)

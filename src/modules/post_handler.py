@@ -16,7 +16,7 @@ class PostHandler:
 
     # Edit subreddits here. Keep in mind, we probably shouldn't include subreddits like
     # /r/NetNeutrality, since they probably already know this information.
-    subreddits = ['technology']
+    subreddits = ['technology', 'all']
     search_terms = ['net neutrality']
 
     @staticmethod
