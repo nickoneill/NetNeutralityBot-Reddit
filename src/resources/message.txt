@@ -1,6 +1,7 @@
-If you want to help protect Net Neutrality, you can support groups like the Electronic Frontier Foundation and the ACLU and Free Press who are fighting to keep Net Neutrality:
+[To learn about Net Neutrality, why it's important, and/or want tools to help you fight for Net Neutrality, visit BattleForTheNet](https://www.battleforthenet.com)
 
-* https://www.battleforthenet.com/
+You can support groups like the Electronic Frontier Foundation and the ACLU and Free Press who are fighting to keep Net Neutrality:
+
 * https://www.eff.org/
 * https://www.aclu.org/
 * https://www.freepress.net/
@@ -22,5 +23,6 @@ Write to your [House Representative here](http://www.house.gov/representatives/f
 
 [Also check this out](https://democracy.io/#!/), which was made by the EFF and is a low transaction cost tool for writing all your reps in one fell swoop.
 
+Most importantly, ***VOTE***. This should not be something that is so clearly split between the political parties at it affects all Americans, but unfortunately it is.
 
-If you would like to contribute to the text in this bot's posts, [please edit this file](https://github.com/tylerbrockett/NetNeutralityBot-Reddit/blob/master/src/resources/message.txt) on github.
+*If you would like to contribute to the text in this bot's posts, [please edit this file](https://github.com/tylerbrockett/NetNeutralityBot-Reddit/blob/master/src/resources/message.txt) on github.*
