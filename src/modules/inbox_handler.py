@@ -32,12 +32,17 @@ class InboxHandler:
 
     @staticmethod
     def handle_default_message(message, reddit):
+        name = ''
+        if message.author is not None:
+            name = '/u/' + message.author.name
+        elif message.subreddit is not None:
+            name = '/r/' + str(message.subreddit)
         reddit.send_message(
             credentials['developer'],
             'NetNeutralityBot - Message',
-            'Username: /u/' + message.author.name + '\t \n' +
-            'Subject:     ' + message.subject + '\t \n' +
-            'Body:        ' + message.body
+            'Username: ' + name + '\t \n' +
+            'Subject:  ' + message.subject + '\t \n' +
+            'Body:     ' + message.body
         )
         message.mark_read()
 
