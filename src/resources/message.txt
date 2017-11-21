@@ -23,6 +23,6 @@ Write to your [House Representative here](http://www.house.gov/representatives/f
 
 [Also check this out](https://democracy.io/#!/), which was made by the EFF and is a low transaction cost tool for writing all your reps in one fell swoop.
 
-Most importantly, ***VOTE***. This should not be something that is so clearly split between the political parties at it affects all Americans, but unfortunately it is.
+Most importantly, ***VOTE***. This should not be something that is so clearly split between the political parties as it affects all Americans, but unfortunately it is.
 
 *If you would like to contribute to the text in this bot's posts, [please edit this file](https://github.com/tylerbrockett/NetNeutralityBot-Reddit/blob/master/src/resources/message.txt) on github.*
