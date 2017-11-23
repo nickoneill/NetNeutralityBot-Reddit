@@ -10,6 +10,7 @@ Version:            v1.0
 """
 
 from modules.account import credentials
+from prawcore.exceptions import Forbidden
 
 
 class PostHandler:
@@ -27,7 +28,7 @@ class PostHandler:
             posts = reddit.get_submissions(subreddit)
             for post in posts:
                 for term in PostHandler.search_terms:
-                    if term in post.title.lower() or (post.link_flair_text and term in post.link_flair_text.lower()):
+                    if not post.locked and term in post.title.lower() or (post.link_flair_text and term in post.link_flair_text.lower()):
                         if not database.match_exists(post.permalink):
                             matches.append((term, post))
         return matches
@@ -35,12 +36,16 @@ class PostHandler:
     @staticmethod
     def handle_matches(reddit, database, matches, message):
         for term, post in matches:
-            database.insert_comment(post.permalink)
-            comment = post.reply(message)
-            database.commit()
-            reddit.send_message(
-                credentials['developer'],
-                'NetNeutralityBot - Posted',
-                'NetNeutralityBot - Posted\n\t \n' +
-                '[' + str(post.title) + '](' + comment.permalink + ')'
-            )
+            try:
+                database.insert_comment(post.permalink)
+                comment = post.reply(message)
+                database.commit()
+                reddit.send_message(
+                    credentials['developer'],
+                    'NetNeutralityBot - Posted',
+                    'NetNeutralityBot - Posted\n\t \n' +
+                    '[' + str(post.title) + '](' + comment.permalink + ')'
+                )
+            except Forbidden as e:
+                database.commit()  # Commit entry for subreddit posts where bot is banned
+                print('Forbidden')

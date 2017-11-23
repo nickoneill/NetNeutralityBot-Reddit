@@ -53,10 +53,10 @@ class NetNeutralityBot:
 
     def signature(self):
         signature = \
-            '\n\t \n\t \n-/u/' + credentials['username'] + '\n\t \n\t \n' + \
-            '[Contact Developer](https://www.reddit.com/message/compose/?to=' + credentials['developer'] + ') | ' + \
-            '[Bot Code](' + GITHUB_HOME + ') | ' + \
-            '[Readme](' + GITHUB_README + ')\n'
+            '\n\t \n\t \n-/u/' + credentials['username'] + '\n\t \n\t \n' # + \
+            # '[Contact Developer](https://www.reddit.com/message/compose/?to=' + credentials['developer'] + ') | ' + \
+            # '[Bot Code](' + GITHUB_HOME + ') | ' + \
+            # '[Readme](' + GITHUB_README + ')\n'
         return signature
 
 
