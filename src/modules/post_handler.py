@@ -28,7 +28,7 @@ class PostHandler:
             posts = reddit.get_submissions(subreddit)
             for post in posts:
                 for term in PostHandler.search_terms:
-                    if term in post.title.lower() or (post.link_flair_text and term in post.link_flair_text.lower()):
+                    if not post.locked and term in post.title.lower() or (post.link_flair_text and term in post.link_flair_text.lower()):
                         if not database.match_exists(post.permalink):
                             matches.append((term, post))
         return matches
